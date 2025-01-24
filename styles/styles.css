@@ -54,6 +54,10 @@ img.bgImage {
   object-fit: cover;
 }
 
+p.aboutText {
+  line-height: 1.8;
+}
+
 p.impText {
   margin: 0;
 }
