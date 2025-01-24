@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="de" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,10 +22,12 @@
     <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a
-            class="navbar-brand d-flex align-items-center"
-            href="./index.html"
-            ><img class="rounded mx-2" height="40" src="../resources/images/logo48.webp" />
+          <a class="navbar-brand d-flex align-items-center" href="./index.html"
+            ><img
+              class="rounded mx-2"
+              height="40"
+              src="../resources/images/logo48.webp"
+            />
             <span>KlimaWächter</span></a
           >
           <button
@@ -109,8 +111,23 @@
                 </p>
               </div>
             </div>
-            <div class="col-12 col-lg-6">
-              <img class="bgImage" src="../resources/images/earth.webp" />
+            <div class="col-12 col-lg-6 d-flex flex-column">
+              <div class="my-4">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <a class="menu-link" href="#about">Über uns</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a class="menu-link" href="#targets">Ziele</a>
+                  </li>
+                  <li class="list-group-item">
+                    <a class="menu-link" href="#emissions">Emissionen</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="flex-grow-1">
+                <img class="bgImage" src="../resources/images/earth.webp" />
+              </div>
             </div>
           </div>
         </div>
@@ -218,5 +235,6 @@
     </footer>
 
     <script src="../scripts/script.js"></script>
+    <script src="../scripts/languageSettings.js"></script>
   </body>
 </html>
