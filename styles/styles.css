@@ -9,14 +9,54 @@
   padding: 20px;
 }
 
+.navbar {
+  padding: 0.8rem 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav {
+  padding: 0px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0.5rem;;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  margin: 0 0.5rem 0 0.5rem;
+  padding: 0.2rem 0.5rem 0 0.5rem;
+}
+
 .nav-link,
 .navbar-brand {
-  transition: 0.3s;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover,
 .navbar-brand:hover {
+  transform: translateY(-2px);
+  text-decoration: underline;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent;
+}
+
+.navbar-toggler-icon {
+  border-radius: 2px;
+  padding: 0.2rem;
+}
+
+.footerText {
+  font-size: 1.1rem;
   color: white;
+  margin: 0;
+  padding: 0;
 }
 
 .table {
