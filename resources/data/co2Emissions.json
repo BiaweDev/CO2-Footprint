@@ -47,7 +47,9 @@
       {"company": "ItalGreen", "country": "Italien", "emissions": 1600},
       {"company": "UrbanLife Corp", "country": "USA", "emissions": 2000},
       {"company": "Energy Masters", "country": "China", "emissions": 4600},
-      {"company": "GreenTech India", "country": "Indien", "emissions": 750}
+      {"company": "GreenTech India", "country": "Indien", "emissions": 750},
+      {"company": "SkyHigh China", "country": "China", "emissions": 4600},
+      {"company": "NatureFirst India", "country": "Indien", "emissions": 750}
     ]
   }
   
