@@ -2,11 +2,11 @@ function setDocumentLanguage(userLang) {
   document.documentElement.lang = userLang;
 }
 
-function setTextDirection(userLang) {
+function setTextDirection() {
   const rtlLanguages = ["ar", "he", "fa", "ur"]; // Arabisch, Hebräisch, Persisch, Urdu
 
   const htmlElement = document.documentElement;
-  if (rtlLanguages.includes(userLang)) {
+  if (rtlLanguages.includes(htmlElement.lang)) {
     htmlElement.dir = "rtl";
   } else {
     htmlElement.dir = "ltr";
@@ -14,12 +14,12 @@ function setTextDirection(userLang) {
 }
 
 function updateLanguageSettings() {
-  const userLang = navigator.language || navigator.languages[0];
+  const userLang = navigator.language;
 
   // Sprache im HTML-Tag setzen
   setDocumentLanguage(userLang);
   // Ändern der Schreibrichtung je nach bevorzugter Schriftkultur
-  setTextDirection(userLang);
+  setTextDirection();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
