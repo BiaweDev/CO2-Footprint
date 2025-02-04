@@ -22,6 +22,4 @@ function updateLanguageSettings() {
   setTextDirection();
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  updateLanguageSettings();
-});
+updateLanguageSettings();
