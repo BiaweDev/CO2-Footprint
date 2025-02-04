@@ -1,28 +1,27 @@
+// Daten aus JSON-Datei laden
 async function getJsonData() {
   const response = await fetch("../resources/data/co2Emissions.json");
   return await response.json();
 }
 
-// Function to populate the table
 function populateTable(data) {
-  // Reference to the table body
   const tableBody = document.querySelector("#tbody");
 
+  // Tabelleninhalt leeren
   while (tableBody.firstChild) {
     tbody.removeChild(tbody.firstChild);
   }
 
+  // Zeilen erstellen und der Tabelle hinzufügen
   data.items.forEach((item, index) => {
     const row = document.createElement("tr");
 
-    // Create and append cells
     ["index", "company", "country", "emissions"].forEach((key) => {
       const cell = document.createElement("td");
       cell.textContent = key === "index" ? index + 1 : item[key];
       row.appendChild(cell);
     });
 
-    // Append the row to the table body
     tableBody.appendChild(row);
   });
 }
@@ -132,31 +131,30 @@ async function sortByEmissionCol(data, changeSortMode) {
   );
 }
 
-async function handleSort(data, sortCol) {
+async function handleSort(data, sortColId) {
+  let changeSortMode = true;
   const thead = document.getElementById("thead");
 
-  let changeSortMode = true;
-
-  if (!sortCol) {
-    sortCol = thead.getAttribute("data-sort-col");
+  if (!sortColId) {
+    sortColId = thead.getAttribute("data-sort-col");
     changeSortMode = false;
   } else {
-    thead.setAttribute("data-sort-col", sortCol);
+    thead.setAttribute("data-sort-col", sortColId);
   }
 
-  if (sortCol === "companyCol") {
+  if (sortColId === "companyCol") {
     sortByCompanyCol(data, changeSortMode);
-  } else if (sortCol === "countryCol") {
+  } else if (sortColId === "countryCol") {
     sortByCountryCol(data, changeSortMode);
   } else {
     sortByEmissionCol(data, changeSortMode);
   }
 }
 
-async function handleFilterAndSort(data, sortCol) {
+async function handleFilterAndSort(data, sortColId) {
   const tempData = structuredClone(data);
   handleFilter(tempData);
-  handleSort(tempData, sortCol);
+  handleSort(tempData, sortColId);
 
   populateTable(tempData);
 }
@@ -165,6 +163,7 @@ getJsonData().then((data) => {
   populateCountrySelector(data);
   handleFilterAndSort(data);
 
+  // Event-Listener für Benutzerinteraktionen
   document
     .getElementById("countrySelector")
     .addEventListener("change", () => handleFilterAndSort(data));
